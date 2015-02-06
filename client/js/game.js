@@ -286,20 +286,25 @@ function(InfoManager, BubbleManager, Renderer, Map, Animation, Sprite, AnimatedT
                     name: "Hero",
                     desc: "Defeat the final boss"
                 },
-                FOXY: {
+                FEEL_ALIVE: {
                     id: 18,
+                    name: "Stronger",
+                    desc: "Pick up a healing portion"
+                },
+                FOXY: {
+                    id: 19,
                     name: "Foxy",
                     desc: "Find the Firefox costume",
                     hidden: true
                 },
                 FOR_SCIENCE: {
-                    id: 19,
+                    id: 20,
                     name: "For Science",
                     desc: "Enter into a portal",
                     hidden: true
                 },
                 RICKROLLD: {
-                    id: 20,
+                    id: 21,
                     name: "Rickroll'd",
                     desc: "Take some singing lessons",
                     hidden: true
@@ -2806,6 +2811,7 @@ function(InfoManager, BubbleManager, Renderer, Map, Animation, Sprite, AnimatedT
 
                 if(Types.isHealingItem(item.kind)) {
                     this.audioManager.playSound("heal");
+                    this.tryUnlockingAchievement("FEEL_ALIVE");
                 } else {
                     this.audioManager.playSound("loot");
                 }
